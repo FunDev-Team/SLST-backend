@@ -1,17 +1,1 @@
-[
-  {
-    "id": 1,
-    "name": "Object Oriented Programming",
-    "questions": [
-      {
-        "index": 1,
-        "question": "asdfasdf?",
-        "A": "",
-        "B": "",
-        "C": "",
-        "D": "",
-        "answer": "A"
-      }
-    ]
-  }
-]
+[{"id":1,"name":"Object Oriented Programming","questions":[{"index":1,"question":"asdfasdf?","A":"","B":"","C":"","D":"","answer":"A"}]}]
