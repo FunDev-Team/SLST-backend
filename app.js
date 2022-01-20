@@ -11,7 +11,16 @@ app.all('/', function (req, res, next) {
   res.header('Access-Control-Allow-Headers', 'X-Requested-With');
   next();
 });
-
+app.get('/', function (req, res, next) {
+    res.status(200).json({
+        status: 'success'
+    });
+});
+app.post('/', function (req, res, next) {
+  res.status(200).json({
+    status: 'success'
+    });
+});
 console.log('aaaaaaaaaaaa');
 
 app.use(express.json());
