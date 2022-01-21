@@ -3,12 +3,10 @@ const examController = require('../controller/examController');
 
 const router = express.Router();
 
-router.param('id', examController.checkId);
-
 router
   .route('/')
   .get(examController.getAllExams)
-  .post(examController.checkBody, examController.createExam);
+  .post(examController.createExam);
 router
   .route('/:id')
   .get(examController.getOneExam)

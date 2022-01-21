@@ -3,12 +3,10 @@ const accountController = require('../controller/accountController');
 
 const router = express.Router();
 
-router.param('id', accountController.checkId);
-
 router
   .route('/')
   .get(accountController.getAllAccounts)
-  .post(accountController.checkBody, accountController.createAccount);
+  .post(accountController.createAccount);
 router
   .route('/:id')
   .get(accountController.getOneAccount)

@@ -3,12 +3,10 @@ const docController = require('../controller/docController');
 
 const router = express.Router();
 
-router.param('id', docController.checkId);
-
 router
   .route('/')
   .get(docController.getAllDocs)
-  .post(docController.checkBody, docController.createDoc);
+  .post(docController.createDoc);
 router
   .route('/:id')
   .get(docController.getOneDoc)

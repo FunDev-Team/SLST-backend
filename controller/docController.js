@@ -1,69 +1,58 @@
-const fs = require('fs');
+const Doc = require('./../models/docs');
 
-const docs = JSON.parse(
-  fs.readFileSync(`${__dirname}/../data/docs.json`, 'utf-8')
-);
+exports.getAllDocs = async (req, res) => {
+  try {
+    const docs = await Doc.find();
 
-exports.checkBody = (req, res, next) => {
-  if (!req.body.name || !req.body.url) {
-    return res.status(404).json({
+    res.status(200).json({
+      status: 'success',
+      length: docs.length,
+      data: {
+        docs,
+      },
+    });
+  } catch (err) {
+    res.status(404).json({
       status: 'fail',
-      message: 'Missing name or url',
+      message: 'Missing required field',
     });
   }
-  next();
 };
 
-exports.checkId = (req, res, next, id) => {
-  const doc = docs.find((el) => el.id == id);
-  if (!doc) {
-    return res.status(404).json({
+exports.getOneDoc = async (req, res) => {
+  try {
+    const doc = await Doc.findById(req.params.id);
+
+    res.status(200).json({
+      status: 'success',
+      data: {
+        doc,
+      },
+    });
+  } catch (err) {
+    res.status(404).json({
       status: 'fail',
       message: 'ID invalid',
     });
   }
-  next();
 };
 
-exports.getAllDocs = (req, res) => {
-  res.status(200).json({
-    status: 'success',
-    length: docs.length,
-    data: {
-      docs,
-    },
-  });
-};
+exports.createDoc = async (req, res) => {
+  try {
+    const newDoc = await Doc.create(req.body);
 
-exports.getOneDoc = (req, res) => {
-  const id = req.params.id * 1;
-  const doc = docs.find((el) => el.id == id);
-
-  res.status(200).json({
-    status: 'success',
-    data: {
-      doc,
-    },
-  });
-};
-
-exports.createDoc = (req, res) => {
-  const newId = docs.length + 1;
-  const newDoc = Object.assign({ id: newId }, req.body);
-  docs.push(newDoc);
-
-  fs.writeFile(
-    `${__dirname}/../data/docs.json`,
-    JSON.stringify(docs),
-    (err) => {
-      res.status(201).json({
-        status: 'success',
-        data: {
-          doc: newDoc,
-        },
-      });
-    }
-  );
+    res.status(201).json({
+      status: 'success',
+      data: {
+        doc: newDoc,
+      },
+    });
+  } catch (err) {
+    res.status(404).json({
+      status: 'fail',
+      message: 'Missing required field',
+    });
+  }
 };
 
 exports.updateDoc = (req, res) => {
@@ -73,21 +62,18 @@ exports.updateDoc = (req, res) => {
   });
 };
 
-exports.deleteDoc = (req, res) => {
-  const id = req.params.id * 1;
-  var newDocs = docs.filter((el) => el.id != id);
-  newDocs.map((el, index) => {
-    el.id = index + 1;
-  });
+exports.deleteDoc = async (req, res) => {
+  try {
+    await Doc.findByIdAndDelete(req.params.id);
 
-  fs.writeFile(
-    `${__dirname}/../data/docs.json`,
-    JSON.stringify(newDocs),
-    (err) => {
-      res.status('200').json({
-        status: 'success',
-        message: 'Doc has been delete',
-      });
-    }
-  );
+    res.status(204).json({
+      status: 'success',
+      message: 'Delete successful!',
+    });
+  } catch (err) {
+    res.status(404).json({
+      status: 'fail',
+      message: 'ID invalid',
+    });
+  }
 };
