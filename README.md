@@ -4,15 +4,6 @@ Link to SLST - Frontend: https://github.com/FunDev-Team/SLST-frontend
   <img src="https://github.com/FunDev-Team/SLST-frontend/blob/main/public/logo.png" width="100px" title="hover text">
 </p>
 
-## :office: Table of contents
-* [Project infomation](#project-infomation)
-* [FunDev - Team](#funDev-Team)
-* [Prerequisites](#prerequisites)
-* [Guide](#guide)
-* [Project structure](#project-structure)
-* [Contact](#contact)
-
-
 ## :books: Project structure
   ### I. Functions of the website
   | Function name | Specific implemantation |
