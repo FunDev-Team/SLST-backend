@@ -1,4 +1,5 @@
 # SLST -  Share document and Contest 
+Link to SLST - Frontend: https://github.com/FunDev-Team/SLST-frontend
 <p align="center">
   <img src="https://github.com/FunDev-Team/SLST-frontend/blob/main/public/logo.png" width="100px" title="hover text">
 </p>
@@ -11,47 +12,6 @@
 * [Project structure](#project-structure)
 * [Contact](#contact)
 
-## :memo: Project infomation
- * SLST : Self-Learn Self-Taught
- * SLST is a non-profit website where free materials are shared. Besides, you can also try your hand at selected and continously updated tests.
-
-## :family_man_boy_boy: FunDev - Team
-  FunDev is a group of information technology students from HCMUS and CTU, the goal of developing a project to help the student community develop more. 
-
-## :old_key: Prerequisites
-Before you start, ensure you meet the following requirements:
-  - [x] You have intalled the Visual Studio Code or any other Javascript enabled enviroment.
-  - [x] You also have to install NodeJS LTS and npm
-  - [x] You have a basic understand of Typescript, Tailwind.
-
-## :page_with_curl: Guide:
-### Cloning the project to your local
-  - Open Git bash
-  - Paste folllowing command:
-```
-$ git clone https://github.com/FunDev-Team/SLST-frontend.git
-```
-  
-### Running on local using npm
- #### Install
-  At the terminal, paste the command:
-```
-$ npm install
-```
- #### Usage
-   - After installing enviroment, using command to run:
-```
-$ npm run 
-```
-   - Click url : http://localhost:3000 to run on local.
-  
-### Deloying on netlify by drag and drop
-  - Step 1 : At the terminal, create file build:
-``` 
-$ npm run build 
-```
-  - Step 2 : Open netlify and log in netlify in browser
-  - Step 3 : Drag and drop the newly created build file into the upload section on netlify to proceed with deloy project
 
 ## :books: Project structure
   ### I. Functions of the website
