@@ -1,7 +1,7 @@
 # SLST -  Share document and Contest 
 Link to SLST - Frontend: https://github.com/FunDev-Team/SLST-frontend
 
-API Document: https://github.com/FunDev-Team/SLST-frontend
+API Document: https://basalt-leech-fa6.notion.site/SLST-API-document-47a2c381c7654fbe8c18230af145a29f
 <p align="center">
   <img src="https://github.com/FunDev-Team/SLST-frontend/blob/main/public/logo.png" width="100px" title="hover text">
 </p>
